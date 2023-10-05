@@ -1,30 +1,47 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <MainHeader></MainHeader>
   <router-view />
+  <MainFooter></MainFooter>
 </template>
+<script lang="ts">
+import { defineComponent } from "vue";
+import MainHeader from "./components/MainHeader.vue";
+import MainFooter from "./components/MainFooter.vue";
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+export default defineComponent({
+  components: {
+    MainHeader,
+    MainFooter,
+  },
+  // setup() {},
+});
+</script>
+
+<style lang="scss">
+html {
+  font-size: 62.5%;
 }
-
-nav {
-  padding: 30px;
+body {
+  font-family: YakuHanJP_Noto, "Noto Sans JP", sans-serif;
+  font-size: 1.4rem;
+  color: #111;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  text-align: left;
+  font-weight: 400;
+  -webkit-text-size-adjust: 100%; //iOS用の文字サイズ
+  -webkit-font-smoothing: antialiased; //MacOSとiOS用の文字サイズ調整用
+  -moz-osx-font-smoothing: grayscale; //Firefoxらしい
+  background-color: #f5f5f5;
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+a {
+  color: #111;
+  text-decoration: none;
 }
-
-nav a.router-link-exact-active {
-  color: #42b983;
+a:hover {
+  color: #111;
+  text-decoration: none;
+}
+a:focus {
 }
 </style>
